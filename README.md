@@ -1,5 +1,34 @@
 # Documentation opencv
 
+## Section 1: Como correr el programa
+Para correr el programa primero debes crear un ambiente virtual de python. Para ello, debes correr el siguiente comando:
+``` 
+python -m venv venv
+```
+
+Para activar el ambiente virtual, debes correr el siguiente comando:
+linux/
+macos:
+```
+source venv/bin/activate
+```
+
+windows:
+```
+venv\Scripts\activate
+```
+
+
+Para correr el programa, primero se debe instalar las dependencias necesarias. Para ello, se debe correr el siguiente comando:
+```
+pip install -r requirements.txt
+```
+
+Luego, se debe correr el siguiente comando:
+```
+python start.py
+```
+
 ## Section 2: NumPy and Image Basics
 
 

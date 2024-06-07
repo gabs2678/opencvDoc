@@ -2,16 +2,18 @@ import subprocess
 
 def main():
     while True:
-        print("Welcome ti the Face Recognition System")
+        print("Welcome to the Face Recognition System")
         print("1. Start Video Monitoring")
-        print("2. Exit")
+        print("2. Add a new person")
+        print("3. Exit")
 
         choice = input("Enter your choice: ")
 
         if choice == "1":
             subprocess.run(["python", "face_recognize3.py"])
-
         elif choice == "2":
+            subprocess.run(["python", "add_person.py"])
+        elif choice == "3":
             print("Exiting the system")
             break
         else:
