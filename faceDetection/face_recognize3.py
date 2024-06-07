@@ -8,14 +8,12 @@ import math
 reference_image = face_recognition.load_image_file("datasets/gabriel/5.png")
 reference_face_encoding = face_recognition.face_encodings(reference_image)[0]
 
-# Initialize some variables
 face_locations = []
 face_encodings = []
 face_names = []
 process_this_frame = 10
 frame_count = 0
 
-# Open video capture
 video_capture = cv2.VideoCapture(0)
 
 
@@ -64,14 +62,11 @@ while True:
         font = cv2.FONT_HERSHEY_DUPLEX
         cv2.putText(frame, name, (left + 6, bottom - 6), font, 1.0, (255, 255, 255), 1)
 
-    # Display the resulting image
     cv2.imshow('Video', frame)
 
-    # Hit 'q' on the keyboard to quit!
     if cv2.waitKey(1) & 0xFF == 27: 
         break
 
-# Release handle to the webcam
 video_capture.release()
 cv2.destroyAllWindows()
 
