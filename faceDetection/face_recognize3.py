@@ -33,6 +33,7 @@ def start_video_monitoring(reference_image_path, persona_name):
             face_encodings = face_recognition.face_encodings(rgb_small_frame, face_locations)
 
             face_names = []
+            precision = 0
             for face_encoding in face_encodings:
                 # Check if the face matches the reference face
                 matches = face_recognition.compare_faces([reference_face_encoding], face_encoding, tolerance=0.6)
@@ -43,6 +44,7 @@ def start_video_monitoring(reference_image_path, persona_name):
                 best_match_index = np.argmin(face_distances)
                 if matches[best_match_index]:
                     name = persona_name 
+                    precision = 1 - face_distances[best_match_index]
 
                 face_names.append(name)
 
@@ -62,7 +64,7 @@ def start_video_monitoring(reference_image_path, persona_name):
             # Draw a label with a name below the face
             cv2.rectangle(frame, (left, bottom - 35), (right, bottom), (0, 0, 255), cv2.FILLED)
             font = cv2.FONT_HERSHEY_DUPLEX
-            cv2.putText(frame, name, (left + 6, bottom - 6), font, 1.0, (255, 255, 255), 1)
+            cv2.putText(frame,f"{name} ({int(precision *100)}%)" , (left + 6, bottom - 6), font, 1.0, (255, 255, 255), 1)
 
         cv2.imshow('Video', frame)
 
