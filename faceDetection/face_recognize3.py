@@ -16,6 +16,9 @@ frame_count = 0
 
 video_capture = cv2.VideoCapture(0)
 
+# def calculatePrecision:
+
+
 
 while True:
     # Grab a single frame of video
@@ -33,7 +36,7 @@ while True:
         face_names = []
         for face_encoding in face_encodings:
             # Check if the face matches the reference face
-            matches = face_recognition.compare_faces([reference_face_encoding], face_encoding, tolerance=0.4)
+            matches = face_recognition.compare_faces([reference_face_encoding], face_encoding, tolerance=0.6)
             name = "Unknown"
 
             # Use the known face with the smallest distance to the new face
