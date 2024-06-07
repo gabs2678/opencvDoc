@@ -33,7 +33,7 @@ while True:
         face_names = []
         for face_encoding in face_encodings:
             # Check if the face matches the reference face
-            matches = face_recognition.compare_faces([reference_face_encoding], face_encoding)
+            matches = face_recognition.compare_faces([reference_face_encoding], face_encoding, tolerance=0.4)
             name = "Unknown"
 
             # Use the known face with the smallest distance to the new face
