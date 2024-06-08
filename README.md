@@ -18,6 +18,9 @@ windows:
 venv\Scripts\activate
 ```
 
+```
+set PYTHONPATH=C:\Users\Gabriel\Desktop\tesis\face_recognition\opencvDoc\myvenv\Lib\site-packages
+```
 
 Para correr el programa, primero se debe instalar las dependencias necesarias. Para ello, se debe correr el siguiente comando:
 ```
